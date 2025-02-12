@@ -6,7 +6,7 @@
 /*   By: bailey <bailey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:20:50 by msmajdor          #+#    #+#             */
-/*   Updated: 2025/02/12 19:14:00 by bailey           ###   ########.fr       */
+/*   Updated: 2025/02/12 19:22:30 by bailey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,29 +48,13 @@ int	handle_key_events(int keycode, t_game *game)
 		close_game(game);
 	return (0);
 }
-/*
+
 void	start_game(t_game game)
 {
 	game.mlx = mlx_init();
 	game.w = map_width(game.map[0]);
 	game.h = map_height(game.map);
 	game.win = mlx_new_window(game.mlx, game.w * 50, game.h * 50, "so_long");
-	find_coords(game.map, game.p_pos, game.e_pos);
-	init_textures(&game);
-	render_gamemap(game, 'w');
-	mlx_hook(game.win, 17, 0, close_game, &game);
-	mlx_key_hook(game.win, handle_key_events, &game);
-	mlx_loop(game.mlx);
-}
-*/
-
-#define WIN_WIDTH 800
-#define WIN_HEIGHT 600
-
-void	start_game(t_game game)
-{
-	game.mlx = mlx_init();
-	game.win = mlx_new_window(game.mlx, WIN_WIDTH, WIN_HEIGHT, "so_long");
 	find_coords(game.map, game.p_pos, game.e_pos);
 	init_textures(&game);
 	render_gamemap(game, 'w');
